@@ -1,0 +1,17 @@
+S = <whitespace?> expr* <whitespace?>
+
+<expr> = literal | seq | deref
+<literal> = <whitespace?> (number | string | symbol) <whitespace?>
+
+number = #"\d"
+seq = <'('> expr* <')'>
+deref = <'@'> expr
+
+(* Include things like `nil` and `copper` to resolve later *)
+symbol =  #'[+=\-*a-zA-Z]+'
+string = <'"'> {#'[^"\\]' | escape-sequence}  <'"'>
+
+(* Actually handle what is a valid escape sequence and what isn't at a higher level *)
+escape-sequence = <'\\'> #'.'
+
+<whitespace> = #'[,\s]+'

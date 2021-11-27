@@ -1,0 +1,19 @@
+{:aliases {:test {:extra-deps
+                    {lambdaisland/kaocha #:mvn{:version "1.60.945"}
+                     lambdaisland/kaocha-cloverage #:mvn{:version "1.0.75"}
+                     lambdaisland/kaocha-junit-xml #:mvn{:version "0.0.76"}
+                     orchestra/orchestra #:mvn{:version "2021.01.01-1"}
+                     speculative/speculative #:mvn{:version "0.0.3"}}
+                  :extra-paths ["test"]
+                  :main-opts ["-m" "kaocha.runner"]}}
+ :deps {com.taoensso/timbre #:mvn{:version "5.1.2"}
+        instaparse/instaparse #:mvn{:version "1.4.10"}
+        org.clojure/clojure #:mvn{:version "1.11.0-alpha3"}
+        org.clojure/test.check #:mvn{:version "1.1.0"}
+        rhizome/rhizome #:mvn{:version "0.2.9"}
+        slingshot/slingshot #:mvn{:version "0.12.2"}}
+ :mvn/repos {"central" {:url "https://repo1.maven.org/maven2/"}
+             "clojars" {:url "https://repo.clojars.org/"}
+             "sonatype-oss-public"
+               {:url "https://oss.sonatype.org/content/groups/public/"}}
+ :paths ["src" "resources"]}
